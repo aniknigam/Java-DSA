@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class functionP8SumOfOdd {
 
+      // this is the main function this will be executed first.
+
     public static void main(String[] args) {
         System.out.println("Enter a number to get the sum of odd number.");
         Scanner sc = new Scanner(System.in);
@@ -24,6 +26,6 @@ public class functionP8SumOfOdd {
         return 1;
     }
 
-    // this is the main function this will be executed first.
+  
 
 }
