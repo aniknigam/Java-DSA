@@ -27,8 +27,9 @@ public class arrayMaxMinNum {
         for (int i = 0; i < size; i++) {
             number[i] = sc.nextInt();
         }
-
+        //min contain the largest value that an int can have
         int min = Integer.MAX_VALUE;
+        //max contain the minimum value  that an int can have
         int max = Integer.MIN_VALUE;
 
         for (int i = 0; i < size; i++) {
