@@ -3,6 +3,15 @@
 // Eg : { 1, 2, 4, 7 } is sorted in ascending order.
 //  {3, 4, 6, 2} is not sorted in ascending order
 
+// ArrayIndexOutOfBoundsException
+// The ArrayIndexOutOfBoundsException occurs when you try to access an element in an array using an index that is outside the valid range of indices for that array. In the given code, the issue could arise if the size of the array is entered incorrectly by the user.
+
+// Let's analyze the code to understand how this exception can occur:
+
+
+// int size = sc.nextInt();
+// int numbers[] = new int[size];
+
 import java.util.Scanner;
 
 public class arrayFindAscending {
