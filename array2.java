@@ -18,7 +18,7 @@ public class array2 {
         
         //this loop  will print the values of array
         for(int i = 0; i<size; i++){
-            System.out.println("the value at index " + i + " 3is: " + numbers[i]);
+            System.out.println("the value at index " + i + " is: " + numbers[i]);
         }
          sc.close();
     }
