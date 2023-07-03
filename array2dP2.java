@@ -39,5 +39,6 @@ public class array2dP2 {
             }
         }
       }
+      sc.nextInt();
     }
 }
