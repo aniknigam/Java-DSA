@@ -33,7 +33,7 @@ public class arraySpiralOrder {
             }
             System.out.println();
         }
-
+        
         System.out.println("The spiral order of Matrix is:");
 
         // these are the index of the rows and columns
