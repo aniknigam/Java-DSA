@@ -5,6 +5,8 @@ import java.util.*;
 public class bitManipulationP1 {
 
     public static boolean isPowerOfTwo(int number){
+
+        // if we perform AND operation with 1000 & 0111 which is 8 and 7 we  will get 0
         return ((number > 0) &&  (number & (number -1 )) == 0);
      
     }
