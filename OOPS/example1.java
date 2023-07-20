@@ -15,6 +15,7 @@ class Pen {
 
     // creating method for printing the color of the pen
     public void penColor() {
+        // we are passing the object as a parameter with the help of this keyword
         System.out.println(this.color);
     }
 }
