@@ -68,6 +68,10 @@ public class Strings {
 
         String slice = fullSentence.substring(5, 19);
         System.out.println(slice);
+
+        String hello = "aniket";
+        String sub = hello.substring(2, 4);
+        System.out.println(sub);
     }
 
 }
