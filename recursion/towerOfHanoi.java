@@ -36,5 +36,6 @@ public class towerOfHanoi {
         int n = sc.nextInt();
         towerOfHanoi(n, "A", "B", "C");
         sc.close();
+
     }
 }
