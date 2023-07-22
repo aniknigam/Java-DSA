@@ -12,6 +12,10 @@ class Hello {
     Hello() {
         System.out.println("Constructor Called");
     }
+
+    public void greet() {
+        System.out.println("say hello");
+    }
 }
 
 // Main class
@@ -23,6 +27,7 @@ public class constructorPL {
         Hello h1 = new Hello();
         // output
         // Constructor Called
+        h1.greet();
 
     }
 }
