@@ -23,7 +23,7 @@ class Car {
 }
 
 // Main class
-public class constructorP {
+public class parameterizedConstructor {
     public static void main(String[] args) {
 
         // Create a Car object using the constructor and provide the model and color as
