@@ -21,6 +21,7 @@ class Triangle extends Shape {
     // Method to calculate and display the area of the triangle
     public void area(int base, int height) {
         System.out.println("Area of the triangle: " + 0.5 * base * height);
+
     }
 }
 
