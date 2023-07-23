@@ -1,7 +1,7 @@
 package OOPS;
 
 class Shape {
-    void draw() {
+    public void draw() {
         System.out.println("Can't say the shape type");
     }
 }
@@ -9,7 +9,7 @@ class Shape {
 class Circle extends Shape {
 
     @Override
-    void draw() {
+    public void draw() {
         System.out.println("Circle Drawing");
     }
 }
