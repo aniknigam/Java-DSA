@@ -12,10 +12,6 @@ public class advanceP3 {
             return 2;
         }
 
-        if (n > m) {
-            return 2;
-        }
-
         // If the floor size is less than the tile size, there is only one way to place
         // the tile (vertically).
         if (n < m) {
