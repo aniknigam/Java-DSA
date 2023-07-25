@@ -1,3 +1,4 @@
+//WAP to find number of ways in which you can invite n people to your party single or pairs
 package advRecursion;
 
 public class advanceP4 {
