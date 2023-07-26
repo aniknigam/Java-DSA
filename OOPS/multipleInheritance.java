@@ -2,6 +2,7 @@ package OOPS;
 
 // Define the 'Gagets' interface with a single method 'gagetFun'.
 interface Gagets {
+
     void gagetFun(String fun);
 }
 
