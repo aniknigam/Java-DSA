@@ -7,9 +7,17 @@ package OOPS;
 
 // Abstract class representing an Animal
 abstract class Animal {
+    Animal() {
+        System.out.println("we have created a constructor in animal");
+    }
+
     abstract void walk(); // Abstract method representing how the animal walks
 
     abstract void breathe(); // Abstract method representing how the animal breathes
+
+    public void eats() {
+        System.out.println("this animal eats");
+    }
 }
 
 // Concrete class Horse extending Animal
