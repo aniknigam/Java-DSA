@@ -1,3 +1,4 @@
+//find the maximun and minimum number from the arraylist
 package Arraylist;
 
 import java.util.*;
