@@ -28,7 +28,8 @@ class LL {
             head = newNode;
             return;
         }
-        newNode.next = head; // Set the next reference of the new Node to the current head
+        newNode.next = head; // Set the next reference of the new Node to the current head...newNode is
+                             // pointing to the head
         head = newNode; // Update the head to the new Node
     }
 
