@@ -13,6 +13,7 @@ public class LLDeleteLast {
             this.data = data;
             this.next = null;
         }
+
     }
 
     // Method to add a new node at the beginning of the linked list
