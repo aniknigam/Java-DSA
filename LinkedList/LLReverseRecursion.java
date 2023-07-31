@@ -101,6 +101,7 @@ public class LLReverseRecursion {
         head.next.next = head;
 
         // Step 2: Set the current node's next pointer to null to make it the new tail.
+        // break the point from 2->3 and only contain 3->2
         head.next = null;
 
         // Return the new head of the reversed list (which was the last node in the

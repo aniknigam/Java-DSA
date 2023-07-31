@@ -1,11 +1,10 @@
 package LinkedList;
 
-public class LLSize {
-
+public class LLaddMiddle {
     Node head; // Reference to the first node (head) of the linked list
     private int size; // Variable to keep track of the size of the linked list
 
-    LLSize() {
+    LLaddMiddle() {
         this.size = 0; // Constructor to initialize the size to 0 when a new LinkedList is created
     }
 
@@ -101,39 +100,63 @@ public class LLSize {
                                 // node
     }
 
-    public void addMiddle(int index, String data) {
-        if (index > size || index < 0) {
-            System.out.println("invalid index");
-            return;
-        }
-        size++;
-
-        Node newNode = new Node(data);
-        if (head == null || index == 0) {
-            newNode.next = head;
-            head = newNode;
-            return;
-        }
-        Node currNode = head;
-        for (int i = 1; i < size; i++) {
-            if (i == index) {
-                Node nextNode = currNode.next;
-                currNode.next = newNode;
-                newNode.next = nextNode;
-                break;
-            }
-            currNode = currNode.next;
-        }
-    }
-
     // Get the size of the linked list
     public int getSize() {
         return size;
     }
 
+    // Reverse the linked list in-place
+    public void reverseList() {
+        if (head == null || head.next == null) {
+            // If the list is empty or has only one node, there is nothing to reverse
+            return;
+        }
+        Node prevNode = head;
+        Node curNode = head.next;
+
+        while (curNode != null) {
+            Node nextNode = curNode.next;
+            curNode.next = prevNode; // Reverse the "next" pointer to point to the previous node
+
+            // Move to the next pair of nodes
+            prevNode = curNode;
+            curNode = nextNode;
+        }
+
+        head.next = null; // Set the "next" pointer of the original head to null to make it the last node
+        head = prevNode; // Update the head to the last node, which becomes the new head of the reversed
+                         // list
+    }
+
+    // Add a new node with the given data at the specified index in the linked list
+    public void addMiddleNode(int index, String data) {
+        if (index > size || index < 0) {
+            System.out.println("Invalid index");
+            return;
+        }
+        size++;
+        Node newNode = new Node(data);
+        if (head == null || index == 0) {
+            // If the list is empty or the index is 0, make the new node the head of the
+            // list
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        Node curNode = head;
+        for (int i = 1; i < size; i++) {
+            if (i == index) {
+                Node nextNode = curNode.next;
+                curNode.next = newNode; // Insert the new node after the current node
+                newNode.next = nextNode; // Link the new node to the next node in the list
+            }
+            curNode = curNode.next; // Move to the next node in the list
+        }
+    }
+
     public static void main(String[] args) {
         // Test the LinkedList implementation
-        LLSize list = new LLSize();
+        LLaddMiddle list = new LLaddMiddle();
         list.addFirst("a");
         list.addLast("list");
         list.printLinkedList();
@@ -145,15 +168,12 @@ public class LLSize {
         list.deleteLast();
         list.printLinkedList();
         System.out.println(list.getSize());
-        list.addLast("hello");
-        list.addLast("world");
         list.printLinkedList();
-        System.out.println(list.getSize());
-        list.addMiddle(1, "hey");
+        list.addMiddleNode(1, "aniket");
         list.printLinkedList();
-        list.addMiddle(0, "aniket");
+        list.addMiddleNode(0, "MY");
         list.printLinkedList();
-        list.addMiddle(3, "nigam");
+        list.addLast("lucknow");
         list.printLinkedList();
 
     }
