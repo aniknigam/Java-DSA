@@ -1,11 +1,11 @@
 package LinkedList;
 
-public class LLdeleteMiddle {
+public class LLsearch {
 
     Node head; // Reference to the head of the linked list
     private int size;
 
-    LLdeleteMiddle() {
+    LLsearch() {
         this.size = 0;
     }
 
@@ -142,25 +142,39 @@ public class LLdeleteMiddle {
 
     }
 
+    public int search(String data) {
+        int i = 0;
+        if (head == null) {
+            System.out.println("Linked List is empty");
+            return -1; // Updated to return -1 for an empty list
+        }
+
+        Node currNode = head;
+
+        while (currNode != null) {
+            if (currNode.data.equals(data)) { // Corrected the string comparison with equals()
+                return i;
+            }
+            i++;
+            currNode = currNode.next;
+        }
+
+        // Moved the "data not found" message outside the loop to avoid repetitive
+        // messages
+        System.out.println("Data not found");
+        return -1; // Updated to return -1 when the data is not found
+    }
+
     public static void main(String[] args) {
-        LLdeleteMiddle list = new LLdeleteMiddle();
-        list.addFirst("this");
-        list.addLast("is");
-        list.addLast("a list");
+        LLsearch list = new LLsearch();
+        list.addFirst("hello");
+        list.addFirst("my");
+        list.addFirst("name");
+        list.addFirst("aniket");
+        list.addFirst("car");
+        list.addFirst("linkedlist");
         list.printLinkedList();
-        list.deleteFirst();
-        list.printLinkedList();
-        list.deleteLast();
-        list.printLinkedList();
-        list.deleteLast();
-        list.printLinkedList();
-        list.addFirst("I");
-        list.addFirst("am");
-        list.addFirst("deleting");
-        list.addFirst("midddle");
-        list.printLinkedList();
-        list.deleteMiddle(1);
-        list.printLinkedList();
+        System.out.println(list.search("null"));
 
     }
 }
