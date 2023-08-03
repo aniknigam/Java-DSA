@@ -10,7 +10,7 @@ public class StackCollectionFramework {
         s1.push(3);
 
         System.out.println(s1.peek());
-        System.out.println("Printing elements of stack");
+        System.out.println("Printing all elements of stack");
         while (!s1.isEmpty()) {
             System.out.println(s1.peek());
             s1.pop();
