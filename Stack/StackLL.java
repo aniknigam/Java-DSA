@@ -62,9 +62,17 @@ public class StackLL {
         s.push(3);
         s.push(4);
 
+        int removeTop = s.pop();
+        System.out.println("the value we have removed is: " + removeTop);
+
+        System.out.println("Now the peek element is:" + s.peek());
+
+        // as soon as this while condition is ture stop the loop
+        System.out.println("Printing all the values which are left");
         while (!s.isEmpty()) {
             System.out.println(s.peek());
             s.pop();
         }
+
     }
 }
