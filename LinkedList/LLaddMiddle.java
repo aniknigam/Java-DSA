@@ -146,6 +146,8 @@ public class LLaddMiddle {
         Node curNode = head;
         for (int i = 1; i < size; i++) {
             if (i == index) {
+                // it means that the current node (curNode) is the one before the position where
+                // the new node should be inserted.
                 Node nextNode = curNode.next;
                 curNode.next = newNode; // Insert the new node after the current node
                 newNode.next = nextNode; // Link the new node to the next node in the list

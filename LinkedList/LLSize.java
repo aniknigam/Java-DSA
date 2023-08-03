@@ -155,6 +155,11 @@ public class LLSize {
         list.printLinkedList();
         list.addMiddle(3, "nigam");
         list.printLinkedList();
+        System.out.println(list.getSize());
+        list.printLinkedList();
+        list.addLast("Lucknow");
+        list.printLinkedList();
+        list.printLinkedList();
 
     }
 }
