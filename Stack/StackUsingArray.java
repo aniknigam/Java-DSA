@@ -23,7 +23,6 @@ class Stack {
         if (top == capacity - 1) {
             // This prevents the creation of a stack with an invalid capacity and helps
             // catch programming errors early on during development.
-
             throw new IllegalStateException("Stack Overflow"); // Check if the stack is full before pushing
         }
         size++; // Increase the size of the stack
