@@ -17,6 +17,7 @@ public class circularQueueArray {
         }
 
         public boolean isFull() {
+            // if array is of size 5 and rear is at idx 3 and frt is at 6 then (2+1)%5 == 3
             return (rear + 1) % size == front;
         }
 
@@ -42,6 +43,8 @@ public class circularQueueArray {
             if (rear == front) {
                 rear = front = -1;
             } else {
+                // if rear is at last index and 0 index is empty then it will help rear to reach
+                // to index 0
                 front = (front + 1) % size;
             }
             return result;
