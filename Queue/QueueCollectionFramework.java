@@ -28,3 +28,11 @@ public class QueueCollectionFramework {
 
     }
 }
+
+/*
+ * ArrayDeque is generally the preferred choice for implementing a Queue in most
+ * scenarios due to its better performance and lower memory usage. However, if
+ * you require the specific features provided by LinkedList, or if you have
+ * specific usage patterns where LinkedList outperforms ArrayDeque, then you
+ * might choose LinkedList accordingly
+ */
