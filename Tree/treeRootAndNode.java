@@ -50,7 +50,7 @@ public class treeRootAndNode {
         // create an object of Binary Tree
         BinaryTree tree = new BinaryTree();
         // we will call buildTree function and pass all the node and store it in root
-        // node
+        // nodee
         Node root = tree.buildTree(nodes);
 
         System.out.println(root.data);
