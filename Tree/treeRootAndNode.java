@@ -28,6 +28,12 @@ public class treeRootAndNode {
                 return null;
             }
 
+            // we did it for the first Node and their left Node and Right Node and assuming
+            // that it will do rest of the work
+
+            // If the value is not -1, the function creates a new Node object using the
+            // value at the current index in the nodes array.
+
             Node newNode = new Node(nodes[index]);
             newNode.left = buildTree(nodes);
             newNode.right = buildTree(nodes);
