@@ -29,6 +29,8 @@ public class diameterOfTreeA2 {
             return newNode;
         }
 
+        // The treeInfo class is a simple container to hold two pieces of information:
+        // the height of a subtree and the diameter of a subtree.
         static class treeInfo {
             int ht;
             int dia;
@@ -39,6 +41,9 @@ public class diameterOfTreeA2 {
             }
         }
 
+        // The diameter function takes a Node as input and returns a treeInfo object
+        // containing the height and
+        // diameter of the subtree rooted at that node.
         public treeInfo diameter(Node root) {
             if (root == null) {
                 return new treeInfo(0, 0);

@@ -1,0 +1,77 @@
+Q>  Write a code to find if the tree is subtree of another tree
+
+LeetC`ode Question
+
+code
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isIdentical(TreeNode root, TreeNode subRoot){
+        if(root == null && subRoot == null){
+            return true;
+        }
+         if(root == null || subRoot == null){
+            return false;
+        }
+
+       if(root.val == subRoot.val){
+           return  isIdentical(root.left, subRoot.left) && isIdentical(root.right, subRoot.right);
+       }
+
+       return false;
+    }
+    public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+        if(subRoot == null){
+            return true;
+        }
+        if(root == null){   
+            return false;                     
+        }
+
+        if(root.val == subRoot.val) {
+            if(isIdentical(root, subRoot)){
+                return true;
+            }
+        }
+       return  isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+    }
+}
+
+
+Algorithm
+Certainly! Here's the algorithm for the provided code:
+
+**Function `isIdentical(root, subRoot)`**
+1. If both `root` and `subRoot` are `null`, return `true` (both empty trees are identical).
+2. If either `root` or `subRoot` is `null` while the other isn't, return `false` (since one tree can't be identical to an empty tree).
+3. If the values of the current nodes in both trees (`root` and `subRoot`) are equal:
+   - Recursively call `isIdentical` for their left subtrees and right subtrees:
+     - If both left subtrees and right subtrees are identical, return `true` (the entire trees are identical).
+     - If either left or right subtrees are not identical, return `false` (the trees are not identical).
+4. If the current nodes' values aren't equal, return `false` (the trees are not identical).
+
+**Function `isSubtree(root, subRoot)`**
+1. If `subRoot` is `null`, return `true` (an empty tree is always a subtree).
+2. If `root` is `null`, return `false` (an empty main tree can't contain any subtree).
+3. If the value of the current node in `root` equals the root value of `subRoot`:
+   - Check if `subRoot` is identical to the current subtree rooted at `root` using `isIdentical` function:
+     - If identical, return `true` (the `subRoot` is a subtree of the `root`).
+4. Recursively call `isSubtree` for the left subtree and right subtree of `root`:
+   - If `subRoot` is found in either the left or right subtree, return `true` (the `subRoot` is a subtree of the `root`).
+   - If not found in either subtree, return `false` (the `subRoot` is not a subtree of the current `root` node).
+
+In summary, the `isIdentical` function checks if two trees are identical by comparing their nodes recursively, and the `isSubtree` 
+function checks if one tree is a subtree of another by exploring the structure of the trees and checking for identical subtrees.

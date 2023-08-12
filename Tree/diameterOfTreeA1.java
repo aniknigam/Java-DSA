@@ -51,6 +51,7 @@ public class diameterOfTreeA1 {
 
             int diam1 = diameter(root.left);
             int diam2 = diameter(root.right);
+            // diam3 when the diameter of a tree goes through root node
             int diam3 = height(root.left) + height(root.right) + 1;
 
             return Math.max(diam1, Math.max(diam2, diam3));
