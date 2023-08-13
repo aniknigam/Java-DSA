@@ -32,77 +32,41 @@ public class treeProblem {
         }
 
         public int sumAtKlength(Node root, int target) {
-            // If the current node is null
             if (root == null)
                 return 0;
 
-            // Create Queue
+            // Create a Queue to perform level-order traversal
             Queue<Node> que = new LinkedList<>();
+            int level = 0; // Initialize the current level
+            int sum = 0; // Initialize the sum of node values at the target level
 
-            // Enqueue the root node
+            // Enqueue the root node to start traversal
             que.add(root);
+            que.add(null); // Using null as a level arranging
 
-            // Level is used to track
-            // the current level
-            int level = 0;
-
-            // To store the sum of nodes
-            // at the Kth level
-            int sum = 0;
-
-            // flag is used to break out of
-            // the loop after the sum of all
-            // the nodes at Nth level is found
-            int flag = 0;
-
-            // Iterate the queue till its not empty
             while (!que.isEmpty()) {
+                Node curNode = que.peek(); // Get the front node from the queue
+                que.remove(); // Dequeue the current node
 
-                // Calculate the number of nodes
-                // in the current level
-                int size = que.size();
-
-                // Process each node of the current
-                // level and enqueue their left
-                // and right child to the queue
-                while (size-- > 0) {
-                    Node ptr = que.peek();
-                    que.remove();
-
-                    // If the current level matches the
-                    // required level then calculate the
-                    // sum of all the nodes at that level
+                if (curNode != null) {
                     if (level == target) {
-
-                        // Flag initialized to 1
-                        // indicates that sum of the
-                        // required level is calculated
-                        flag = 1;
-
-                        // Calculating the sum of the nodes
-                        sum += ptr.data;
-                    } else {
-
-                        // Traverse to the left child
-                        if (ptr.left != null)
-                            que.add(ptr.left);
-
-                        // Traverse to the right child
-                        if (ptr.right != null)
-                            que.add(ptr.right);
+                        sum += curNode.data; // If the current level matches the target, add the node value to the sum
                     }
+
+                    // Enqueue the left and right children of the current node, if they exist
+                    if (curNode.left != null) {
+                        que.add(curNode.left);
+                    }
+                    if (curNode.right != null) {
+                        que.add(curNode.right);
+                    }
+                } else if (!que.isEmpty()) {
+                    que.add(null); // Add a level delimiter to mark the end of the current level
+                    level++; // Move to the next level
                 }
-
-                // Increment the variable level
-                // by 1 for each level
-                level++;
-
-                // Break out from the loop after the sum
-                // of nodes at K level is found
-                if (flag == 1)
-                    break;
             }
-            return sum;
+
+            return sum; // Return the sum of node values at the target level
         }
 
     }
@@ -111,6 +75,6 @@ public class treeProblem {
         int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTree(nodes);
-        System.out.println(tree.sumAtKlength(root, 1));
+        System.out.println(tree.sumAtKlength(root, 2));
     }
 }
