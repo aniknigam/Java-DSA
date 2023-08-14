@@ -77,7 +77,7 @@ public class deleteBST {
             return;
         }
         preorder(root.left);
-        System.out.print(root.data + " ");
+        System.out.print(root.data + "  ");
         preorder(root.right);
     }
 
