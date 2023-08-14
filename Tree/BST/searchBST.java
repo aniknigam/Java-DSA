@@ -41,10 +41,18 @@ public class searchBST {
         if (root == null) {
             return false;
         }
-        if (root.data > key) {
-            return search(root.left, key);
-        } else if (root.data == key) {
+        // if (root.data > key) {
+        // return search(root.left, key);
+        // } else if (root.data == key) {
+        // return true;
+        // } else {
+        // return search(root.right, key);
+        // }
+
+        if (root.data == key) {
             return true;
+        } else if (root.data > key) {
+            return search(root.left, key);
         } else {
             return search(root.right, key);
         }
@@ -61,7 +69,7 @@ public class searchBST {
 
         System.out.println();
 
-        if (search(root, 8)) {
+        if (search(root, 15)) {
             System.out.println("found");
         } else {
             System.out.println("Not found");
