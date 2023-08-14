@@ -61,7 +61,7 @@ public class searchBST {
 
         System.out.println();
 
-        if (search(root, 100)) {
+        if (search(root, 8)) {
             System.out.println("found");
         } else {
             System.out.println("Not found");
