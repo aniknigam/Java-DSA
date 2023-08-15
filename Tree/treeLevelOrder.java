@@ -32,6 +32,9 @@ public class treeLevelOrder {
         }
 
         public void levelOrder(Node root) {
+            if (root == null) {
+                return;
+            }
             // create a queue from collection framework
             Queue<Node> q = new LinkedList<>();
             // add root into the queue
