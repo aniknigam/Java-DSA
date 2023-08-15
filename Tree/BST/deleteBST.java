@@ -56,7 +56,7 @@ public class deleteBST {
                 // find inorder successor
                 Node IS = InroderSuccessor(root.right);
                 root.data = IS.data; // update the value of root to inorder successor
-                root.right = delete(root.right, val);// delete the left most in right subtree
+                root.right = delete(root.right, IS.data);// delete the left most in right subtree
             }
         }
 
