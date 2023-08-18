@@ -1,8 +1,11 @@
 package Graphs;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
-public class BFS {
+public class graphInPieceBFS {
+
     static class Edge {
         int src;
         int dest;
@@ -17,6 +20,7 @@ public class BFS {
         for (int i = 0; i < graph.length; i++) {
             graph[i] = new ArrayList<>();
         }
+
         graph[0].add(new Edge(0, 1));
         graph[0].add(new Edge(0, 2));
 
@@ -39,35 +43,17 @@ public class BFS {
         graph[5].add(new Edge(5, 6));
     }
 
-    public static void BFS(ArrayList<Edge> graph[], int V) {
-        // Create a queue for BFS traversal
+    public static void BFS(ArrayList<Edge> graph[], int V, boolean vis[], int start) {
         Queue<Integer> q = new LinkedList<>();
+        q.add(start);
 
-        // Create a boolean array to track visited vertices
-        boolean vis[] = new boolean[V];
-
-        // Start BFS traversal from vertex 0
-        q.add(0);
-
-        // Perform BFS traversal
         while (!q.isEmpty()) {
-            // Get the current vertex from the front of the queue
             int curr = q.remove();
-
-            // If the current vertex is not visited
             if (vis[curr] == false) {
-                // Print the current vertex
-                System.out.print(curr + " ");
-
-                // Mark the current vertex as visited
+                System.out.print(curr + "  ");
                 vis[curr] = true;
-
-                // Traverse through the adjacency list of the current vertex
                 for (int i = 0; i < graph[curr].size(); i++) {
-                    // Get the edge information
                     Edge e = graph[curr].get(i);
-
-                    // Add the destination vertex of the edge to the queue for traversal
                     q.add(e.dest);
                 }
             }
@@ -75,19 +61,17 @@ public class BFS {
     }
 
     public static void main(String[] args) {
-        int v = 7;
-        ArrayList<Edge> graph[] = new ArrayList[v];
+        int V = 7;
+        ArrayList<Edge> graph[] = new ArrayList[V];
 
         createGraph(graph);
-        BFS(graph, v);
 
-        // 1-----3
-        // / | \
-        // / | \
-        // 0 | 5-------6
-        // \ | /
-        // \ | /
-        // 2-----4
+        boolean vis[] = new boolean[V];
+        for (int i = 0; i < V; i++) {
+            if (vis[i] == false) {
+                BFS(graph, V, vis, i);
+            }
+        }
 
     }
 }

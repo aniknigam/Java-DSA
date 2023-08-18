@@ -1,11 +1,11 @@
 package Graphs;
 
-import java.util.*;
+import java.util.ArrayList;
 
-public class BFS {
+public class DFS {
     static class Edge {
-        int src;
         int dest;
+        int src;
 
         Edge(int src, int dest) {
             this.src = src;
@@ -39,37 +39,14 @@ public class BFS {
         graph[5].add(new Edge(5, 6));
     }
 
-    public static void BFS(ArrayList<Edge> graph[], int V) {
-        // Create a queue for BFS traversal
-        Queue<Integer> q = new LinkedList<>();
+    public static void dfs(ArrayList<Edge> graph[], int curr, boolean vis[]) {
+        System.out.print(curr + " ");
 
-        // Create a boolean array to track visited vertices
-        boolean vis[] = new boolean[V];
-
-        // Start BFS traversal from vertex 0
-        q.add(0);
-
-        // Perform BFS traversal
-        while (!q.isEmpty()) {
-            // Get the current vertex from the front of the queue
-            int curr = q.remove();
-
-            // If the current vertex is not visited
-            if (vis[curr] == false) {
-                // Print the current vertex
-                System.out.print(curr + " ");
-
-                // Mark the current vertex as visited
-                vis[curr] = true;
-
-                // Traverse through the adjacency list of the current vertex
-                for (int i = 0; i < graph[curr].size(); i++) {
-                    // Get the edge information
-                    Edge e = graph[curr].get(i);
-
-                    // Add the destination vertex of the edge to the queue for traversal
-                    q.add(e.dest);
-                }
+        vis[curr] = true;
+        for (int i = 0; i < graph[curr].size(); i++) {
+            Edge e = graph[curr].get(i);
+            if (vis[e.dest] == false) {
+                dfs(graph, e.dest, vis);
             }
         }
     }
@@ -79,7 +56,9 @@ public class BFS {
         ArrayList<Edge> graph[] = new ArrayList[v];
 
         createGraph(graph);
-        BFS(graph, v);
+
+        boolean vis[] = new boolean[v];
+        dfs(graph, 0, vis);
 
         // 1-----3
         // / | \
