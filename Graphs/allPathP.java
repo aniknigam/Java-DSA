@@ -2,8 +2,6 @@ package Graphs;
 
 import java.util.ArrayList;
 
-import Arraylist.ArraylistP2;
-
 public class allPathP {
     static class Edge {
         int src;
