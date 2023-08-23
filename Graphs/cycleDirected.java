@@ -49,7 +49,7 @@ public class cycleDirected {
 
         createGraph(graph);
 
-        System.out.println(isCycleDetected(graph, 0, new boolean[v], new boolean[v]));
+        System.out.println("Cycle: " + isCycleDetected(graph, 0, new boolean[v], new boolean[v]));
     }
 
 }
