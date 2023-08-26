@@ -81,7 +81,7 @@ public class dijkstra {
                     Edge e = graph[curr.node].get(i);
                     int u = e.src;
                     int v = e.dest;
-                    if (distance[u] + e.wt < distance[v]) {
+                    if (distance[u] + e.wt < distance[v]) {// this is relaxation concept
                         distance[v] = distance[u] + e.wt;
                         pq.add(new Pair(v, distance[v]));
                     }
