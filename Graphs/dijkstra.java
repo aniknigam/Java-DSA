@@ -48,7 +48,7 @@ public class dijkstra {
 
         @Override
         public int compareTo(Pair p2) {// compareTo is a funtion in the interface which we will override to sort the
-            return this.dist - p2.dist;// we are sorting in ascending order
+            return this.dist - p2.dist;// we are sorting in ascending order on the basis of distance.
             // if we want in descending order then
             // return p2.dist - this.dist
         }
