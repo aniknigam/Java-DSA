@@ -50,7 +50,7 @@ public class graphInPieceBFS {
         while (!q.isEmpty()) {
             int curr = q.remove();
             if (vis[curr] == false) {
-                System.out.print(curr + "  ");
+                System.out.print(curr + " ");
                 vis[curr] = true;
                 for (int i = 0; i < graph[curr].size(); i++) {
                     Edge e = graph[curr].get(i);
