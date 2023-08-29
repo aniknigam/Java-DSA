@@ -2,8 +2,8 @@ package OOPS;
 
 // Super class representing a general shape
 class Shape {
-    String color;
-    String border;
+    public String color;
+    public String border;
 
     // Method to display information about the shape's color and border
     public void info() {
@@ -29,6 +29,7 @@ public class singleInheritance {
     public static void main(String[] args) {
         // Create an instance of the Triangle class
         Triangle t1 = new Triangle();
+        Triangle t2 = new Triangle();
 
         // Set properties for the triangle
         t1.color = "blue";
@@ -44,5 +45,6 @@ public class singleInheritance {
         int base = 32;
         int height = 2;
         t1.area(base, height);
+
     }
 }
