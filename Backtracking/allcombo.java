@@ -3,6 +3,7 @@ package Backtracking;
 
 public class allcombo {
 
+    // method to find all the combination of letters
     public static void printcombo(String str, String comb, int idx) {
         if (str.length() == 0) {
             System.out.println(comb);
