@@ -1,5 +1,4 @@
 //WAP to print all the combination of the string "ABC"
-package Backtracking;
 
 public class allcombo {
 
