@@ -1,4 +1,4 @@
-package tryCatch;
+package ExceptionHandling;
 
 public class test {
 

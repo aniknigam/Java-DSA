@@ -44,7 +44,6 @@ public class mergeSort {
             // means we have reached the stage where we cannot further divide the array
             return;
         }
-
         // find the mid
         // way1- mid = (si+ei)/2;
         // way2 - this is more optimize way because we don't face space issue or index
@@ -55,9 +54,7 @@ public class mergeSort {
         divide(arr, mid + 1, ei);// for 2 half
 
         // Now we will conquer
-
         conquer(arr, si, mid, ei);
-
     }
 
     public static void main(String[] args) {

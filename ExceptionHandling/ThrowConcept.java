@@ -1,4 +1,4 @@
-package tryCatch;
+package ExceptionHandling;
 
 public class ThrowConcept {
     public static int divideNumbers(int a, int b) {
